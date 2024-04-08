@@ -8,12 +8,12 @@ pipeline {
     environment {
         HOST="localhost"
         PORT=5000
-        PGHOST="localhost"
+        PGHOST="postgres"
         PGUSER="postgres"
         PGDATABASE="forum_db"
         PGPASSWORD="passwordpg"
         PGPORT=5432
-        PGHOST_TEST="localhost"
+        PGHOST_TEST="postgres"
         PGUSER_TEST="postgres"
         PGDATABASE_TEST="forumapi_test"
         PGPASSWORD_TEST="passwordpg"

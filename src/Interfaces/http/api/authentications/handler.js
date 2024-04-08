@@ -1,6 +1,6 @@
 const LoginUserUseCase = require('../../../../Applications/use_case/LoginUserUseCase');
 const RefreshAuthenticationUseCase = require('../../../../Applications/use_case/RefreshAuthenticationUseCase');
-const DeleteAuthenticationUseCase = require('../../../../Applications/use_case/DeleteAuthenticationUseCase');
+const LogoutUserUseCase = require('../../../../Applications/use_case/LogoutUserUseCase');
 
 class AuthenticationsHandler {
   constructor(container) {
@@ -39,9 +39,8 @@ class AuthenticationsHandler {
   }
 
   async deleteAuthenticationHandler(request) {
-    const deleteAuthenticationUseCase = this._container
-      .getInstance(DeleteAuthenticationUseCase.name);
-    await deleteAuthenticationUseCase.execute(request.payload);
+    const logoutUserUseCase = this._container.getInstance(LogoutUserUseCase.name);
+    await logoutUserUseCase.execute(request.payload);
     return {
       status: 'success',
     };
